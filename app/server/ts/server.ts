@@ -1,7 +1,6 @@
-import * as express from "express";
-import {json} from "body-parser";
-import {Express, Request, Response} from "express";
-
+import * as express from 'express';
+import {json} from 'body-parser';
+import {Express, Request, Response} from 'express';
 import {CompilerController} from './compiler';
 
 const PORT: number = 8080;

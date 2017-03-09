@@ -1,11 +1,10 @@
-import {Express, Request, Response} from "express";
+import {Express, Request, Response} from 'express';
+import {compilerService} from './compiler.service';
 
 export class CompilerController {
 
     constructor(req: Request, res: Response) {
-        console.log('hello');
-        res.send(200);
-        
+        res.send(compilerService.process());
     }
 
 }
