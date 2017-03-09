@@ -27,11 +27,6 @@ let paths = {
             ts: {
                 _files: '**/*.ts',
                 _folder: 'ts',
-            },
-
-            main: {
-                _files: 'server.ts',
-                _folder: 'ts',
             }
         }
     },
@@ -44,6 +39,10 @@ let paths = {
             },
             css: {},
             js: {}
+        },
+
+        server: {
+
         }
     }
 };
