@@ -39,10 +39,6 @@ let paths = {
             },
             css: {},
             js: {}
-        },
-
-        server: {
-
         }
     }
 };

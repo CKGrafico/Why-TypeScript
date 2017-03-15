@@ -1,4 +1,5 @@
 import * as express from 'express';
+import * as spa from 'express-spa';
 
 import {json} from 'body-parser';
 import {Express, Request, Response} from 'express';
@@ -11,7 +12,10 @@ export class Server {
 
     constructor() {
         this.app = express();
+        this.app.use(express.static(__dirname + '/client'));
         this.app.use(json());
+
+        this.app.use(spa(__dirname + '/client/index.html'));
 
         this.configRouter();
 

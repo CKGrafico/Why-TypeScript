@@ -6,7 +6,7 @@ export class CompilerController {
     constructor(req: Request, res: Response) {
         let jscode = req.body.code;
 
-        if(!jscode) {
+        if (!jscode) {
             res.send(500);
             return;
         }

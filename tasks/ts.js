@@ -1,12 +1,13 @@
+var fs = require('fs');
+var browserify = require('browserify');
+var tsify = require('tsify');
+
 module.exports = (gulp, paths, $, _) => {
-    let tsProject = $.typescript.createProject('./tsconfig.json');
-
-    let tsResult = gulp.src(_.files(paths.app.client.ts))
-        .pipe($.environment.if.development($.sourcemaps.init()))
-        .pipe(tsProject());
-
-    return tsResult.js
-        .pipe($.environment.if.production($.uglify()))
-        .pipe($.environment.if.development($.sourcemaps.write()))
-        .pipe(gulp.dest(_.folder(paths.dist.client.js)));
+    
+    return browserify({debug: $.environment.is.development() ? true : false})
+    .add(_.files(paths.app.client.main))
+    .plugin(tsify)
+    .bundle()
+    .on('error', function (error) { console.error(error.toString()); })
+    .pipe(fs.createWriteStream(_.folder(paths.dist.client.js) + '/app.js'));
 };

@@ -7,5 +7,5 @@ module.exports = (gulp, paths, $, _) => {
 
     return tsResult.js
         .pipe($.environment.if.development($.sourcemaps.write()))
-        .pipe(gulp.dest(_.folder(paths.dist.server)));
+        .pipe(gulp.dest(_.folder(paths.dist)));
 };

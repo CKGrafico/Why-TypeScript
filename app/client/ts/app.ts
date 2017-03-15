@@ -1,5 +1,8 @@
 // import $ from 'jquery';
 
+import 'webslides/static/js/svg-icons.js';
+import 'webslides/static/js/webslides.js';
+
 interface IExample {
     readonly name: string;
 }
