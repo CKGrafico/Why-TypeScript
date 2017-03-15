@@ -1,4 +1,5 @@
 import * as express from 'express';
+
 import {json} from 'body-parser';
 import {Express, Request, Response} from 'express';
 import {CompilerController} from './compiler';
@@ -20,11 +21,12 @@ export class Server {
     }
 
     private configRouter(): void {
+
         this.app.get("/", (req: Request, res: Response) => {
             res.sendfile('./dist/client/index.html');
         });
 
-        this.app.get("/compiler", (req: Request, res: Response) => new CompilerController(req, res));
+        this.app.post("/compiler", (req: Request, res: Response) => new CompilerController(req, res));
     }
 
 }

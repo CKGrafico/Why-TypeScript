@@ -6,23 +6,11 @@ class CompilerService {
         
     }
 
-    process() {
-        let sample = `
-            class Hola {
-                private a:string;
-                constructor() {
-                    this.a = 1;
-                }
-            }
-
-            var b = new Hola()
-        `;
-
-        let code = this.precode + sample;
+    process(jscode) {
+        let code = this.precode + jscode;
         let transpiled = ts.transpileModule(code, {}).outputText;
         let finalCode = transpiled.split(this.precode)[1];
 
-        console.log(finalCode)
         return finalCode;
     }
 

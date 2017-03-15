@@ -4,7 +4,14 @@ import {compilerService} from './compiler.service';
 export class CompilerController {
 
     constructor(req: Request, res: Response) {
-        res.send(compilerService.process());
+        let jscode = req.body.code;
+
+        if(!jscode) {
+            res.send(500);
+            return;
+        }
+
+        res.send(compilerService.process(jscode));
     }
 
 }
