@@ -4,7 +4,7 @@ import {json} from 'body-parser';
 import {Express, Request, Response} from 'express';
 import {CompilerController} from './compiler';
 
-const PORT: number = 8080;
+const PORT = 8080;
 
 export class Server {
     private app: Express;
@@ -22,11 +22,11 @@ export class Server {
 
     private configRouter(): void {
 
-        this.app.get("/", (req: Request, res: Response) => {
+        this.app.get('/', (req: Request, res: Response) => {
             res.sendfile('./dist/client/index.html');
         });
 
-        this.app.post("/compiler", (req: Request, res: Response) => new CompilerController(req, res));
+        this.app.post('/compiler', (req: Request, res: Response) => new CompilerController(req, res));
     }
 
 }

@@ -3,7 +3,6 @@ import * as ts from 'typescript';
 class CompilerService {
     private readonly precode = '/// code start ///';
     constructor() {
-        
     }
 
     process(jscode) {
