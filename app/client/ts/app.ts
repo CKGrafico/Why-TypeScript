@@ -1,16 +1,19 @@
-// import $ from 'jquery';
-
+import * as $ from 'jquery';
 import 'webslides/static/js/svg-icons.js';
 import 'webslides/static/js/webslides.js';
 
-interface IExample {
-    readonly name: string;
+import Router from './app.router';
+
+let selectors = {
+    wrapper: '#webslides'
+};
+
+class App {
+    private router: Router;
+
+    constructor() {
+        this.router = new Router(selectors.wrapper);
+    }
 }
 
-class Example implements IExample {
-    public readonly name = 'test';
-}
-
-let example = new Example();
-
-console.log(example.name);
+new App();

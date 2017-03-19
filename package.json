@@ -6,6 +6,7 @@
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "express-spa": "0.0.2",
+    "jquery": "^3.1.1",
     "normalize-scss": "^6.0.0",
     "typescript": "^2.2.1",
     "webslides": "^1.2.1"
