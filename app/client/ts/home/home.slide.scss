@@ -1,0 +1,116 @@
+@import '../../scss/base/variables';
+
+.wt-home {
+    background: linear-gradient(to bottom, $color-brand-darkest 0%, $color-brand-darker 50%);
+    position: relative;
+
+    &-background {
+        background-image: url('../assets/images/home_blueprint.png');
+        background-size: contain;
+    }
+
+    &-wrap {
+        margin-top: -10vw;
+    }
+
+    &-logo {
+        max-width: 30vw;
+    }
+
+    &-plane {
+        animation: home-plane-1 20s 3s infinite cubic-bezier(.62,.61,.32,1.73);
+        bottom: 0;
+        left: -5vw;
+        position: absolute;
+        width: 2vw;
+
+        &--secondary {
+            animation: home-plane-2 20s 6s infinite cubic-bezier(.62,.61,.32,1.73);
+        }
+
+        $space: 1.5;
+        @keyframes home-plane-1 {
+            0% {
+                bottom: $space * 10vh;
+                left: -5vw;
+            }
+
+            10% {
+                bottom: $space * 2vh;
+                left: 10vw;
+            }
+
+            15% {
+                bottom: $space * 8vh;
+                left: 15vw;
+            }
+
+            25% {
+                bottom: $space * 15vh;
+                left: 25vw;
+            }
+
+            40% {
+                bottom: $space * 4vh;
+                left: 40vw;
+            }
+
+            60% {
+                bottom: $space * 20vh;
+                left: 60vw;
+            }
+
+            80% {
+                bottom: $space * 5vh;
+                left: 80vw;
+            }
+
+            100% {
+                bottom: $space * 25vh;
+                left: 100vw;
+            }
+        }
+
+        @keyframes home-plane-2 {
+            0% {
+                bottom: $space * 15vh;
+                left: -5vw;
+            }
+
+            10% {
+                bottom: $space * 20vh;
+                left: 10vw;
+            }
+
+            15% {
+                bottom: $space * 12vh;
+                left: 15vw;
+            }
+
+            25% {
+                bottom: $space * 5vh;
+                left: 25vw;
+            }
+
+            40% {
+                bottom: $space * 8vh;
+                left: 40vw;
+            }
+
+            60% {
+                bottom: $space * 18vh;
+                left: 60vw;
+            }
+
+            80% {
+                bottom: $space * 8vh;
+                left: 80vw;
+            }
+
+            100% {
+                bottom: $space * 5vh;
+                left: 100vw;
+            }
+        }
+    }
+}

@@ -10,7 +10,6 @@ let paths = {
 
             ts: {
                 _files: '**/*.ts',
-                _folder: 'ts',
             },
 
             main: {
@@ -20,6 +19,11 @@ let paths = {
 
             scss: {
                 _files: '**/*.scss',
+            },
+
+            scss_components: {
+                _files: '**/*.scss',
+                _folder: 'ts',
             }
         },
         
