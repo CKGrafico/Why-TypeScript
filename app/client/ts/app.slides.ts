@@ -6,6 +6,7 @@ import {Slide} from './shared/slide';
 import {loadingService} from './shared/loading';
 import {HomeSlide} from './home';
 import {MeSlide} from './me';
+import {BasicTypesSlide} from './basic-types';
 
 let selectors = {
     wrapper: '#webslides'
@@ -20,7 +21,8 @@ export default class {
 
         this.list = [
             new HomeSlide(),
-            new MeSlide()
+            new MeSlide(),
+            new BasicTypesSlide()
         ];
 
         loadingService.show();
@@ -33,6 +35,7 @@ export default class {
     private renderSlides(): void {
         for (let slide of this.list) {
             this.$container.append(slide.compile());
+            slide.onCreate();
         }
     }
 

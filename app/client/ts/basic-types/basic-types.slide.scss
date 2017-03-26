@@ -1,0 +1,14 @@
+@import '../../scss/base/variables';
+
+.wt-me {
+
+    &-row {
+        font-size: 0;
+    }
+
+    &-col {
+        display: inline-block;
+        font-size: $font-size-m;
+        width: 50%;
+    }
+}
