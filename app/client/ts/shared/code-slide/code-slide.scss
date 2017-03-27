@@ -1,0 +1,21 @@
+@import '../../../scss/base/variables';
+
+.wt-code {
+    &-source,
+    &-result,
+    &-source:focus,
+    &-result:focus {
+        background-color: $color-background-brighter;
+        border: 2px solid rgba($color-foreground-dark, .1);
+        box-shadow: 0 5px 30px 0 rgba($color-foreground-dark, .1);
+        height: 50vh;
+        outline: 0;
+        padding: 1vw 3vw;
+    }
+
+    &-example {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+    }
+}

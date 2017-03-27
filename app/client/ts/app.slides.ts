@@ -7,6 +7,7 @@ import {loadingService} from './shared/loading';
 import {HomeSlide} from './home';
 import {MeSlide} from './me';
 import {BasicTypesSlide} from './basic-types';
+import {VariablesSlide} from './variables';
 
 let selectors = {
     wrapper: '#webslides'
@@ -22,7 +23,8 @@ export default class {
         this.list = [
             new HomeSlide(),
             new MeSlide(),
-            new BasicTypesSlide()
+            new BasicTypesSlide(),
+            new VariablesSlide()
         ];
 
         loadingService.show();

@@ -1,10 +1,10 @@
 import * as $ from 'jquery';
 import {CodeSlide} from '../shared/code-slide';
-import template from './basic-types.template';
+import template from './variables.template';
 
-export class BasicTypesSlide extends CodeSlide {
+export class VariablesSlide extends CodeSlide {
     constructor() {
-        super('basicTypes', '.js-slide-basic-types');
+        super('variables', '.js-slide-variables');
         this.template = template;
     }
 

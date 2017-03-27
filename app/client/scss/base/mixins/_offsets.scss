@@ -14,7 +14,7 @@
             $off-value: if($o == '', #{''}, '-' + $offset);
 
             #{'.u-' + $t + $o + '-' + $value} {
-                #{$type}#{$off-value}#{$suffix}: $value + $uni;
+                #{$type}#{$off-value}#{$suffix}: $value + $uni !important;
             }
 
             @for $i from 1 through $mediaslength - 1 {

@@ -40,7 +40,8 @@
     "dev": "gulp --env=development",
     "prod": "gulp --env=production",
     "prewatch": "npm run dev",
-    "watch": "gulp --env=development watcher"
+    "watch": "gulp --env=development watcher",
+    "start": "npm run watch"
   },
   "repository": {
     "type": "git",
