@@ -1,15 +1,17 @@
 import * as $ from 'jquery';
+import * as CodeMirror from 'codemirror';
 import {Slide} from '../slide';
 
 let selectors = {
     source: '.js-source',
+    sourceTemplate: '.js-source-template',
     result: '.js-result'
 };
 
 export class CodeSlide extends Slide {
     public $slide;
-    public $source;
-    public $result;
+    public source;
+    public result;
 
     constructor(public context, private slideSelector?) {
         super();
@@ -17,15 +19,21 @@ export class CodeSlide extends Slide {
 
     public onCreate(): void {
         this.$slide = $(this.slideSelector);
-        this.$source = this.$slide.find(selectors.source);
-        this.$result = this.$slide.find(selectors.result);
+        this.source = CodeMirror(this.$slide.find(selectors.source)[0], {
+            value: this.$slide.find(selectors.sourceTemplate).text(),
+            mode:  'javascript'
+        });
+        this.result = CodeMirror(this.$slide.find(selectors.result)[0], {
+            value: '',
+            mode:  'javascript'
+        });
         this.bindEvents();
     }
 
     public onEval(): void {}
 
     public onCompile(data): void {
-        this.$result.val(data.code);
+        this.result.getDoc().setValue(data.code);
         if (!data.failed) {
             let precode = `window.${this.context} = {}; (function(exports){`;
             let code = data.code;
@@ -37,7 +45,7 @@ export class CodeSlide extends Slide {
     }
 
     private compileSource(): void {
-        let val = this.$source.val();
+        let val = this.source.getDoc().getValue();
         $.ajax({
             type: 'POST',
             data: JSON.stringify({code: val}),
@@ -48,7 +56,7 @@ export class CodeSlide extends Slide {
     }
 
     private bindEvents(): void {
-        this.$source.on('change', () => this.compileSource());
+        this.source.on('change', () => this.compileSource());
         this.compileSource();
     }
 }

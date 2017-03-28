@@ -8,7 +8,7 @@ export default options => `
 
             <div class="grid vertical-align">
               <div class="column">
-                <textarea class="wt-code-source js-source">
+                <div class="is-hidden js-source-template">
 class Shape {
     private color = 'red';
     private height = 20;
@@ -16,10 +16,11 @@ class Shape {
 }
 
 export default Shape;
-                </textarea>
+                </div>
+                <div class="wt-code-source js-source"></div>
               </div>
               <div class="column">
-                <textarea class="wt-code-result js-result"></textarea>
+                <div class="wt-code-result js-result"></div>
               </div>
             </div>
 

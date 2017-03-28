@@ -40,7 +40,7 @@ function transform(contents: string, libSource: string, compilerOptions: ts.Comp
 }
 
 class CompilerService {
-    private readonly precode = '/// code start ///\n';
+    private readonly precode = '/* code start */';
 
     private compilerOptions: ts.CompilerOptions = {
         target: ts.ScriptTarget.ES5
@@ -56,9 +56,6 @@ class CompilerService {
     process(jscode) {
         let code = this.precode + jscode;
         let transpiled = ts.transpileModule(code, this.options);
-        if (transpiled.diagnostics.length > 0) {
-            return transpiled.diagnostics[0].messageText;
-        }
         let finalCode = transpiled.outputText.split(this.precode)[1];
         let libSource = fs.readFileSync(path.join(path.dirname(require.resolve('typescript')), 'lib.d.ts')).toString();
         let checkErrors = transform(code, libSource, this.options.compilerOptions);
