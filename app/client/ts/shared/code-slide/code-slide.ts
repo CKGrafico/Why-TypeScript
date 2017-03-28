@@ -1,5 +1,6 @@
 import * as $ from 'jquery';
 import * as CodeMirror from 'codemirror';
+require('codemirror/mode/javascript/javascript');
 import {Slide} from '../slide';
 
 let selectors = {
@@ -20,12 +21,16 @@ export class CodeSlide extends Slide {
     public onCreate(): void {
         this.$slide = $(this.slideSelector);
         this.source = CodeMirror(this.$slide.find(selectors.source)[0], {
-            value: this.$slide.find(selectors.sourceTemplate).text(),
-            mode:  'javascript'
+            lineNumbers: true,
+            mode:  'text/typescript',
+            theme: 'neo',
+            value: this.$slide.find(selectors.sourceTemplate).text()
         });
         this.result = CodeMirror(this.$slide.find(selectors.result)[0], {
-            value: '',
-            mode:  'javascript'
+            lineNumbers: true,
+            mode:  'javascript',
+            theme: 'neo',
+            value: ''
         });
         this.bindEvents();
     }
@@ -55,8 +60,12 @@ export class CodeSlide extends Slide {
         });
     }
 
+    private checkRefresh() {
+        this.compileSource();
+    }
+
     private bindEvents(): void {
-        this.source.on('change', () => this.compileSource());
+        this.source.on('blur', () => this.checkRefresh());
         this.compileSource();
     }
 }

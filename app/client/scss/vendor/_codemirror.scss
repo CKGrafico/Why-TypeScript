@@ -1,0 +1,19 @@
+@import '../../../../node_modules/codemirror/lib/codemirror';
+@import '../../../../node_modules/codemirror/theme/neo';
+
+.CodeMirror {
+    height: 100% !important;
+
+    // DON'T DO THAT :( thanks webslides xD
+    * {
+        animation: none;
+    }
+}
+
+.CodeMirror-line {
+    padding-left: 1vw !important;
+}
+
+.CodeMirror-hscrollbar {
+    display: none !important;
+}
