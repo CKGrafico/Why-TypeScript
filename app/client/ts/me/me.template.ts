@@ -1,5 +1,5 @@
 export default options => `
-    <section class="aligncenter">
+    <section class="wt-me aligncenter">
         <div class="wrap fadeInUp">
             <div class="card-50 bg-white">
               <figure>
