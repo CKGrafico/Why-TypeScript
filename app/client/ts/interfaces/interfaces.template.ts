@@ -3,20 +3,26 @@ export default options => `
         <div class="wrap fadeInUp">
             <div class="content-center">
               <h2 class="text-landing"><strong>Interfaces</strong></h2>
-              <p>dfdf</p>
+              <p>The powerful way of defining contracts in your code. And also for add a type to the return of external methods and can extend from others.</p>
             </div>
 
             <div class="grid vertical-align">
               <div class="column">
-                <div class="is-hidden js-source-template">
-class Shape {
-    private color = 'red';
-    private height = 20;
-    private width = 50;
+                <textarea class="is-hidden js-source-template">
+interface IBalloon {
+    color: string;
+    readonly age?: number;
+    (text: string): void;
 }
 
-export default Shape;
-                </div>
+function creator(config: IBalloon) {
+    lib.create(config);
+}
+
+lib.ajax().then((data: Array<IBalloon>) => {
+    // Here I've balloons
+});
+                </textarea>
                 <div class="wt-code-source js-source"></div>
               </div>
               <div class="column">

@@ -41,6 +41,8 @@ function transform(contents: string, libSource: string, compilerOptions: ts.Comp
 
 class CompilerService {
     private readonly precode = '/* code start */';
+    private readonly declarations = ' \n let lib: any = {};';
+    private readonly removers = 'lib = {};'
 
     private compilerOptions: ts.CompilerOptions = {
         target: ts.ScriptTarget.ES5
@@ -54,9 +56,10 @@ class CompilerService {
     constructor() {}
 
     process(jscode) {
-        let code = this.precode + jscode;
+        let code = this.precode + this.declarations + jscode;
         let transpiled = ts.transpileModule(code, this.options);
         let finalCode = transpiled.outputText.split(this.precode)[1];
+        finalCode = finalCode.split(this.removers)[1];
         let libSource = fs.readFileSync(path.join(path.dirname(require.resolve('typescript')), 'lib.d.ts')).toString();
         let checkErrors = transform(code, libSource, this.options.compilerOptions);
         let errorsFound = false;

@@ -8,9 +8,9 @@ export default options => `
 
             <div class="grid vertical-align">
               <div class="column">
-                <div class="is-hidden js-source-template">
+                <textarea class="is-hidden js-source-template">
 code
-                </div>
+                </textarea>
                 <div class="wt-code-source js-source"></div>
               </div>
               <div class="column">

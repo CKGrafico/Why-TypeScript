@@ -8,7 +8,6 @@ import {HomeSlide} from './home';
 import {MeSlide} from './me';
 import {IntroductionSlide} from './introduction';
 import {BasicTypesSlide} from './basic-types';
-import {VariablesSlide} from './variables';
 import {InterfacesSlide} from './interfaces';
 import {ClassesSlide} from './classes';
 import {Classes2Slide} from './classes2';
@@ -40,7 +39,6 @@ export default class {
             new MeSlide(), // Plain // helpdev
             new IntroductionSlide(), // what // vs ES // cli
             new BasicTypesSlide(),
-            new VariablesSlide(),
             new InterfacesSlide(),
             new ClassesSlide(),
             new Classes2Slide(),

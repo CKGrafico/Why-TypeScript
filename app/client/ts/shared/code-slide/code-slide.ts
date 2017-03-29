@@ -24,7 +24,7 @@ export class CodeSlide extends Slide {
             lineNumbers: true,
             mode:  'text/typescript',
             theme: 'neo',
-            value: this.$slide.find(selectors.sourceTemplate).text()
+            value: this.$slide.find(selectors.sourceTemplate).val()
         });
         this.result = CodeMirror(this.$slide.find(selectors.result)[0], {
             lineNumbers: true,
