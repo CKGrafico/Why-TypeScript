@@ -40,9 +40,11 @@ function transform(contents: string, libSource: string, compilerOptions: ts.Comp
 }
 
 class CompilerService {
+    // Probably have to refactor that but by the time...
+    private readonly importer = 'import {lib} from \'lib\';';
     private readonly precode = '/* code start */';
-    private readonly declarations = ' \n let lib: any = {};';
-    private readonly removers = 'lib = {};'
+    private readonly declarations = 'let lib: any = {};';
+    private readonly removers = 'var lib = {};'
 
     private compilerOptions: ts.CompilerOptions = {
         target: ts.ScriptTarget.ES5
@@ -53,13 +55,28 @@ class CompilerService {
         reportDiagnostics: true
     }
 
-    constructor() {}
+    private addMethods(code) {
+        let methods = `
+            var promise = {
+                then: function() {},
+                ccatch: function() {}
+            }
+            var lib = {
+                create: function() {},
+                ajax: function() { return promise},
+                move: function() {},
+                setName: function() {}
+            };
+        `;
+        let splitted = code.split(this.precode);
+        return splitted[0] + methods + splitted[1].replace(this.removers, '');
+    }
 
-    process(jscode) {
-        let code = this.precode + this.declarations + jscode;
+    public process(jscode) {
+        let code = this.precode + this.declarations + jscode.replace(this.importer, '');
         let transpiled = ts.transpileModule(code, this.options);
         let finalCode = transpiled.outputText.split(this.precode)[1];
-        finalCode = finalCode.split(this.removers)[1];
+        finalCode = finalCode.replace(this.removers, '// var lib = {...}');
         let libSource = fs.readFileSync(path.join(path.dirname(require.resolve('typescript')), 'lib.d.ts')).toString();
         let checkErrors = transform(code, libSource, this.options.compilerOptions);
         let errorsFound = false;
@@ -82,7 +99,7 @@ class CompilerService {
             finalCode += 'Stopped by Declaration Error: \n' + checkErrors.errors.declaration[0].messageText + '\n';
         }
 
-        return {failed: errorsFound, code: finalCode};
+        return {failed: errorsFound, code: finalCode, realCode: this.addMethods(transpiled.outputText)};
     }
 
 }

@@ -38,12 +38,13 @@ export class CodeSlide extends Slide {
     public onEval(): void {}
 
     public onCompile(data): void {
-        this.result.getDoc().setValue(data.code);
+        let replaced = data.code;
+        this.result.getDoc().setValue(replaced);
         if (!data.failed) {
             let precode = `window.${this.context} = {}; (function(exports){`;
-            let code = data.code;
+            let code = replaced;
             let postcode = `})(${this.context});`
-            let func = new Function(precode + code + postcode);
+            let func = new Function(precode + data.realCode + postcode);
             func()
             this.onEval();
         }

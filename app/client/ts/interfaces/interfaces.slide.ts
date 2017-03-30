@@ -10,12 +10,15 @@ export class InterfacesSlide extends CodeSlide {
 
     public onEval(): void {
         let context = window[this.context];
-        let rectangle = new context.default();
-        let $rectangle = $('.rectangle');
-        $rectangle.css({
-            backgroundColor: rectangle.color,
-            height: rectangle.height + 'px',
-            width: rectangle.width + 'px'
+        let balloon = context.myBalloon;
+        let $balloon = $('.balloon');
+        $balloon.css({
+            backgroundColor: balloon.color
         });
+
+        $balloon.text(balloon.age);
+        if (balloon.title) {
+            $balloon.attr('data-text', balloon.title);
+        }
     }
 }

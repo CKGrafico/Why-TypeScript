@@ -8,7 +8,7 @@ export default options => `
 
             <div class="grid vertical-align">
               <div class="column">
-                <textarea class="is-hidden js-source-template">
+                <textarea class="is-hidden js-source-template">import {lib} from 'lib';
 enum Directions {
     Up = 2,
     Down,

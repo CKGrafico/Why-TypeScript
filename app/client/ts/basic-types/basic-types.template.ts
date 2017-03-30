@@ -8,7 +8,8 @@ export default options => `
 
             <div class="grid vertical-align">
               <div class="column">
-                <textarea class="is-hidden js-source-template">var me: string = 'Quique';
+                <textarea class="is-hidden js-source-template">import {lib} from 'lib';
+var me: string = 'Quique';
 
 //var like: boolean;
 //like = false;
