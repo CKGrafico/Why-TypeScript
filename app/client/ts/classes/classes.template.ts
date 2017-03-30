@@ -3,12 +3,23 @@ export default options => `
         <div class="wrap fadeInUp">
             <div class="content-center">
               <h2 class="text-landing"><strong>Classes</strong></h2>
-              <p>dfdf</p>
+              <p>Similar to ES6 classes (prototype based)</p>
             </div>
 
             <div class="grid vertical-align">
               <div class="column">
                 <textarea class="is-hidden js-source-template">
+class Dog {
+  public tag: string; // by default
+  private age: number;
+  public readonly color: string;
+
+  constructor(tag: string, age: number, color: string, public sound = 'Woof') {
+    this.tag = tag || '';
+    this.age = age || 0;
+    this.color = color || '';
+  }
+}
                 </textarea>
                 <div class="wt-code-source js-source"></div>
               </div>

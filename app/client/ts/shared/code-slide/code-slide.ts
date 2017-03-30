@@ -60,12 +60,8 @@ export class CodeSlide extends Slide {
         });
     }
 
-    private checkRefresh() {
-        this.compileSource();
-    }
-
     private bindEvents(): void {
-        this.source.on('blur', () => this.checkRefresh());
+        this.source.on('blur', () => this.compileSource());
         this.compileSource();
     }
 }
