@@ -33,7 +33,10 @@ export let myBalloon: IBalloon = {
             </div>
 
             <div class="wt-code-example">
-                <div class="balloon"></div>
+                <div class="hot-air-balloon">
+                    <div class="balloon"><span></span></div>
+                    <div class="basket"></div>
+                </div>
             </div>
         </div>
     </section>

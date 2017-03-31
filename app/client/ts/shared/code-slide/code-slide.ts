@@ -65,4 +65,11 @@ export class CodeSlide extends Slide {
         this.source.on('blur', () => this.compileSource());
         this.compileSource();
     }
+
+    protected addRule(selector, styles) {
+        let sheet: any = document.styleSheets[0];
+        if (!sheet) return;
+        if (sheet.insertRule) return sheet.insertRule(selector + ' {' + styles + '}', sheet.cssRules.length);
+        if (sheet.addRule) return sheet.addRule(selector, styles);
+    }
 }

@@ -2,23 +2,32 @@ import * as $ from 'jquery';
 import {CodeSlide} from '../shared/code-slide';
 import template from './interfaces.template';
 
+const container = '.js-slide-interfaces';
+
 export class InterfacesSlide extends CodeSlide {
     constructor() {
-        super('interfaces', '.js-slide-interfaces');
+        super('interfaces', container);
         this.template = template;
     }
 
     public onEval(): void {
         let context = window[this.context];
         let balloon = context.myBalloon;
-        let $balloon = $('.balloon');
+        let $container = $(container);
+        let $balloon = $container.find('.balloon');
+        let $basket = $container.find('.basket');
         $balloon.css({
             backgroundColor: balloon.color
         });
 
-        $balloon.text(balloon.age);
-        if (balloon.title) {
-            $balloon.attr('data-text', balloon.title);
-        }
+        let parent = `${container} .hot-air-balloon`;
+        this.addRule(`${parent} .balloon:before`, `background: ${balloon.color}`);
+        this.addRule(`${parent} .balloon:after`, `background: ${balloon.color}`);
+        this.addRule(`${parent} .balloon span:after`, `background: ${balloon.color}`);
+
+        $basket.text(balloon.age || '');
+        // if (balloon.title) {
+        //     $balloon.attr('data-text', balloon.title);
+        // }
     }
 }

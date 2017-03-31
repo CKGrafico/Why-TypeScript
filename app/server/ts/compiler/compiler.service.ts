@@ -47,12 +47,13 @@ class CompilerService {
     private readonly removers = 'var lib = {};'
 
     private compilerOptions: ts.CompilerOptions = {
-        target: ts.ScriptTarget.ES5
+        target: ts.ScriptTarget.ES5,
+        experimentalDecorators: true
     }
 
     private options: ts.TranspileOptions = {
         compilerOptions: this.compilerOptions,
-        reportDiagnostics: true
+        reportDiagnostics: true,
     }
 
     private addMethods(code) {
@@ -87,16 +88,18 @@ class CompilerService {
         }
 
         if (checkErrors.errors.semantic.length > 0) {
-            finalCode += 'Stopped by Semantic Error: \n' + checkErrors.errors.semantic[0].messageText + '\n';
+            let text: any = checkErrors.errors.semantic[0].messageText;
+            finalCode += 'Stopped by Semantic Error: \n' + text.messageText || text + '\n';
         }
 
         if (checkErrors.errors.syntactic.length > 0) {
-            errorsFound = true;
-            finalCode += 'Stopped by Syntactic Error: \n' + checkErrors.errors.syntactic[0].messageText + '\n';
+            let text: any = checkErrors.errors.syntactic[0].messageText;
+            finalCode += 'Stopped by Syntactic Error: \n' + text.messageText || text + '\n';
         }
 
         if (checkErrors.errors.declaration.length > 0) {
-            finalCode += 'Stopped by Declaration Error: \n' + checkErrors.errors.declaration[0].messageText + '\n';
+            let text: any = checkErrors.errors.declaration[0].messageText;
+            finalCode += 'Stopped by Declaration Error: \n' + text.messageText || text + '\n';
         }
 
         return {failed: errorsFound, code: finalCode, realCode: this.addMethods(transpiled.outputText)};
