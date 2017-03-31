@@ -1,0 +1,170 @@
+@import '../../scss/base/variables';
+$basket: #736855;
+$balloonRope: rgba(#000, .4);
+$balloonColor1: #d7608d;
+$balloonColor2: #ffffff;
+$brown: #644437;
+$darkbrown: rgba(#000, .4);
+$ligtbrown: #f8a643;
+$bone: #CCC;
+$nose: #111;
+
+.wt-classes {
+    // based on https://codepen.io/totya24/pen/EsHel
+    .dog {
+        width: 0px;
+        position: relative;
+        margin: -120px 50px;
+    }
+    .head {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        background: $brown;
+    }
+    .nose {
+        position: absolute;
+        top: 50px;
+        left: -40px;
+        background: $brown;
+        width: 90px;
+        height: 50px;
+        border-radius: 0 0 0 50px;
+    }
+    .nose::after {
+        position: absolute;
+        background: $nose;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        content: '';
+        display: block;
+        top: -5px;
+        left: -5px;
+    }
+    .ear {
+        background: $brown;
+        width: 40px;
+        height: 80px;
+        position: absolute;
+        top: 40px;
+        right: 20px;
+        border-radius: 0 0 0 40px;
+        border-left: 3px solid $darkbrown;
+    }
+    .body {
+        width: 110px;
+        position: absolute;
+        top: 90px;
+        height: 120px;
+        background: $brown;
+        left: 20px;
+        border-radius: 0 150px 0 0;
+        z-index: -1;
+    }
+    .body::before {
+        position: absolute;
+        display: block;
+        content: '';
+        background: $ligtbrown;
+        width: 50px;
+        height: 20px;
+    }
+    .body::after {
+        display: block;
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: $bone;
+        left: -8px;
+        top: 15px;
+        border-radius: 5px;
+        z-index: 3;
+    }
+    .paw {
+        position: absolute;
+        width: 50px;
+        height: 25px;
+        background: $brown;
+        top: 95px;
+        left: -20px;
+        border-radius: 25px 25px 0 0;
+    }
+    .paw::before {
+        display: block;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 20px;
+        height: 70px;
+        width: 20px;
+        background: $darkbrown;
+        z-index: -1;
+        border-radius: 0 20px 0 0;
+    }
+    .tail {
+        position: absolute;
+        width: 30px;
+        height: 100px;
+        background: rgba(#000, .8);
+        right: -20px;
+        z-index: 2;
+        border-radius: 0 50px 50px 0 / 0 100px 100px 0;
+    }
+    .bone {
+        background: $bone;
+        width: 50px;
+        height: 10px;
+        position: absolute;
+        top: 200px;
+        left: -70px;
+        &::before {
+            content: attr(data-text);
+            position: absolute;
+            top: -25px;
+            left: 5px;
+        }
+    }
+    .left {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: $bone;
+        border-radius: 10px;
+        top: -5px;
+        left: -5px;
+    }
+    .left::after {
+        display: block;
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: $bone;
+        border-radius: 10px;
+        top: 10px;
+        right: 0;
+    }
+    .right {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: $bone;
+        border-radius: 10px;
+        top: -5px;
+        right: -5px;
+    }
+    .right::after {
+        display: block;
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: $bone;
+        border-radius: 10px;
+        top: 10px;
+        right: 0;
+    }
+}

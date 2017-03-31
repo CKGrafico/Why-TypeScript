@@ -26,8 +26,5 @@ export class InterfacesSlide extends CodeSlide {
         this.addRule(`${parent} .balloon span:after`, `background: ${balloon.color}`);
 
         $basket.text(balloon.age || '');
-        // if (balloon.title) {
-        //     $balloon.attr('data-text', balloon.title);
-        // }
     }
 }

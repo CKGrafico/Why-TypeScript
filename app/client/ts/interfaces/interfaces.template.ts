@@ -3,7 +3,7 @@ export default options => `
         <div class="wt-interfaces wrap fadeInUp">
             <div class="content-center">
               <h2 class="text-landing"><strong>Interfaces</strong></h2>
-              <p>The powerful way of defining <span class="u-underline">contracts</span> in your code. And also for <span class="u-underline">add a types</span> to the return of external methods and can extend from others.</p>
+              <p>The powerful way of defining <span class="u-underline">contracts</span> in your code. And also for <span class="u-underline">add a types</span> to the return of external methods and can <span class="u-underline">extend</span> from others.</p>
             </div>
 
             <div class="grid vertical-align">
