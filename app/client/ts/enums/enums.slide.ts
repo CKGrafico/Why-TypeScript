@@ -3,6 +3,7 @@ import {CodeSlide} from '../shared/code-slide';
 import template from './enums.template';
 
 const container = '.js-slide-enums';
+
 let constants = {
     left: 'enums-left',
     right: 'enums-right',

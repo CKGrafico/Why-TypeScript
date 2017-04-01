@@ -1,6 +1,6 @@
 export default options => `
     <section class="aligncenter u-pt-40 js-slide-decorators">
-        <div class="wrap fadeInUp">
+        <div class="wt-decorators wrap fadeInUp">
             <div class="content-center">
               <h2 class="text-landing"><strong>Decorators</strong></h2>
               <p>Supporting annotations or modifiers for classes.</p>
@@ -8,21 +8,15 @@ export default options => `
 
             <div class="grid vertical-align">
               <div class="column">
-                <textarea class="is-hidden js-source-template">
-function sealed(constructor: Function) {
-    Object.seal(constructor);
-    Object.seal(constructor.prototype);
+                <textarea class="is-hidden js-source-template">import {lib} from 'lib';
+@lib.Archer
+export class MyHero {
+    @lib.Name
+    private name = 'Eiximenis';
+    private strength = 100;
 }
-@sealed
-class Greeter {
-    greeting: string;
-    constructor(message: string) {
-        this.greeting = message;
-    }
-    greet() {
-        return "Hello, " + this.greeting;
-    }
-}
+
+export let hero = new MyHero();
                 </textarea>
                 <div class="wt-code-source js-source"></div>
               </div>
@@ -32,7 +26,29 @@ class Greeter {
             </div>
 
             <div class="wt-code-example">
-                <div class="rectangle"></div>
+                <div class="clash-card barbarian">
+                    <div class="clash-card__image clash-card__image--barbarian">
+                        <span class="hero-name"></span>
+                        <span class="hero-strength"></span>
+                        <img src="/assets/images/barbarian.png" alt="barbarian" />
+                    </div>
+                </div>
+
+                <div class="clash-card archer">
+                    <div class="clash-card__image clash-card__image--archer">
+                        <span class="hero-name"></span>
+                        <span class="hero-strength"></span>
+                        <img src="/assets/images/archer.png" alt="archer" />
+                    </div>
+                </div>
+
+                <div class="clash-card wizard">
+                    <div class="clash-card__image clash-card__image--wizard">
+                        <span class="hero-name"></span>
+                        <span class="hero-strength"></span>
+                        <img src="/assets/images/wizard.png" alt="wizard" />
+                    </div>
+                </div>
             </div>
         </div>
     </section>

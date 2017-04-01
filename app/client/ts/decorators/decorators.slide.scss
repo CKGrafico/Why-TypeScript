@@ -1,0 +1,87 @@
+@import '../../scss/base/variables';
+
+.wt-decorators {
+    $border-radius-size: 14px;
+    $barbarian: #EC9B3B;
+    $archer: #EE5487;
+    $wizard: #4FACFF;
+
+    .wt-code-example {
+        bottom: -5rem;
+    }
+
+    .hero-name {
+        background-color: $color-background-brighter;
+        bottom: 0;
+        left: 0;
+        padding: 1rem;
+        position: absolute;
+        width: 100%;
+        z-index: 100;
+    }
+
+    .hero-strength {
+        color: $archer;
+        bottom: 0;
+        right: 0;
+        padding: 1rem;
+        position: absolute;
+        z-index: 110;
+    }
+
+    // by http://codepen.io/drehimself/pen/QNXpyp
+
+    .clash-card {
+    background: white;
+    border-radius: $border-radius-size + 5;
+    box-shadow: -1px 15px 30px -12px black;
+        display: none;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    width: 300px;
+    z-index: 9999;
+    &:hover {
+        opacity: .3;
+    }
+    }
+
+    .clash-card__image {
+    border-top-left-radius: $border-radius-size;
+    border-top-right-radius: $border-radius-size;
+    height: 230px;
+    margin-bottom: 35px;
+    position: relative;
+    }
+
+    .clash-card__image--barbarian {
+    background: url('/assets/images/barbarian-bg.jpg');
+    img {
+        left: -70px;
+        position: absolute;    
+        top: -65px;
+        width: 400px;
+    }
+    }
+
+    .clash-card__image--archer {
+    background: url('/assets/images/archer-bg.jpg');
+    img {
+        left: -37px;
+        position: absolute;    
+        top: -34px;
+        width: 400px;
+    }
+    }
+
+    .clash-card__image--wizard {
+    background: url('/assets/images/wizard-bg.jpg');
+    img {
+        left: -10px;
+        position: absolute;    
+        top: -28px;
+        width: 345px;
+    }
+    }
+
+}

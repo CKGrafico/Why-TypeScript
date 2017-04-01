@@ -20,6 +20,7 @@ export class CodeSlide extends Slide {
     private $sourceParent;
     private $resultParent;
     private isAlt = false;
+    protected retrieved: string;
 
     constructor(public context, private slideSelector?) {
         super();
@@ -52,6 +53,7 @@ export class CodeSlide extends Slide {
     public onCompile(data): void {
         let replaced = data.code;
         this.result.getDoc().setValue(replaced);
+        this.retrieved = replaced;
         if (!data.failed) {
             let precode = `window.${this.context} = {}; (function(exports){`;
             let code = replaced;

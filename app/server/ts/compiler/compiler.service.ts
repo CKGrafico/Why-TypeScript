@@ -48,7 +48,8 @@ class CompilerService {
 
     private compilerOptions: ts.CompilerOptions = {
         target: ts.ScriptTarget.ES5,
-        experimentalDecorators: true
+        experimentalDecorators: true,
+        strictNullChecks: true
     }
 
     private options: ts.TranspileOptions = {
