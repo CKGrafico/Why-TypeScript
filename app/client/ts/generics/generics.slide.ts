@@ -4,7 +4,6 @@ import template from './generics.template';
 
 const container = '.js-slide-generics';
 
-
 export class GenericsSlide extends CodeSlide {
     constructor() {
         super('generics', container);

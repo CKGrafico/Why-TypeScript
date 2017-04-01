@@ -5,6 +5,8 @@ import {Slide} from '../slide';
 
 let times = 0;
 
+const SHIFT = 'ShiftLeft';
+
 let selectors = {
     source: '.js-source',
     sourceTemplate: '.js-source-template',
@@ -17,6 +19,7 @@ export class CodeSlide extends Slide {
     public result;
     private $sourceParent;
     private $resultParent;
+    private isShift = false;
 
     constructor(public context, private slideSelector?) {
         super();
@@ -72,17 +75,27 @@ export class CodeSlide extends Slide {
     }
 
     private toggleResult(): void {
-        this.$resultParent.toggle();
+        if (this.isShift) {
+            this.$resultParent.toggle();
+        }
     }
 
     private toggleSource(): void {
-        this.$sourceParent.toggle();
+        if (this.isShift) {
+            this.$sourceParent.toggle();
+        }
+    }
+
+    private checkShift(i, e) {
+        this.isShift = e.code === SHIFT;
     }
 
     private bindEvents(): void {
         this.source.on('blur', () => this.compileSource());
         this.source.on('dblclick', () => this.toggleResult());
         this.result.on('dblclick', () => this.toggleSource());
+        this.source.on('keydown', (i, e) => this.checkShift(i, e));
+        this.result.on('keydown', (i, e) => this.checkShift(i, e));
         this.$slide.on('mouseenter', () => this.compileSource());
     }
 

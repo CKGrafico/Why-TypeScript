@@ -66,8 +66,10 @@ class CompilerService {
             var lib = {
                 create: function() {},
                 ajax: function() { return promise},
-                move: function() {},
+                move: function(direction) {this.direction = direction},
+                direction: -1,
                 show: function() {},
+                configure: function() {},
                 sound: function() {this.isSound = true},
                 isSound: false,
                 setName: function() {}
