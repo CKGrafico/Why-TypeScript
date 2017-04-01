@@ -5,7 +5,7 @@ import {Slide} from '../slide';
 
 let times = 0;
 
-const SHIFT = 'ShiftLeft';
+const ALT = 'Alt';
 
 let selectors = {
     source: '.js-source',
@@ -19,7 +19,7 @@ export class CodeSlide extends Slide {
     public result;
     private $sourceParent;
     private $resultParent;
-    private isShift = false;
+    private isAlt = false;
 
     constructor(public context, private slideSelector?) {
         super();
@@ -75,27 +75,27 @@ export class CodeSlide extends Slide {
     }
 
     private toggleResult(): void {
-        if (this.isShift) {
+        if (this.isAlt) {
             this.$resultParent.toggle();
         }
     }
 
     private toggleSource(): void {
-        if (this.isShift) {
+        if (this.isAlt) {
             this.$sourceParent.toggle();
         }
     }
 
-    private checkShift(i, e) {
-        this.isShift = e.code === SHIFT;
+    private checkAlt(i, e) {
+        this.isAlt = e.code.includes(ALT);
     }
 
     private bindEvents(): void {
         this.source.on('blur', () => this.compileSource());
         this.source.on('dblclick', () => this.toggleResult());
         this.result.on('dblclick', () => this.toggleSource());
-        this.source.on('keydown', (i, e) => this.checkShift(i, e));
-        this.result.on('keydown', (i, e) => this.checkShift(i, e));
+        this.source.on('keydown', (i, e) => this.checkAlt(i, e));
+        this.result.on('keydown', (i, e) => this.checkAlt(i, e));
         this.$slide.on('mouseenter', () => this.compileSource());
     }
 
