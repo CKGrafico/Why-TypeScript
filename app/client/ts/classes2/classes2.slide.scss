@@ -5,7 +5,36 @@ $ligtbrown: #f8a643;
 $bone: #CCC;
 $nose: #111;
 
-.wt-classes {
+.wt-classes2 {
+
+    .bubble {
+        animation: classes2-bubble 3s infinite;
+        border-radius: 50%;
+        background: $color-background-bright;
+        left: -8rem;
+        opacity: 0;
+        padding: 2rem;
+        position: absolute;
+        top: -8rem;
+
+        @keyframes classes2-bubble {
+            0% {
+                opacity: 0;
+                top: -8rem;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 0;
+            }
+            100% {
+                top: -16rem;
+            }
+        }
+    }
     // based on https://codepen.io/totya24/pen/EsHel
     .dog {
         width: 0px;

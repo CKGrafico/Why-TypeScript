@@ -1,6 +1,6 @@
 export default options => `
     <section class="aligncenter u-pt-40 js-slide-classes2">
-        <div class="wrap fadeInUp">
+        <div class="wt-classes2 wrap fadeInUp">
             <div class="content-center">
               <h2 class="text-landing"><strong>More Classes</strong></h2>
               <p>But powerfull like other languages.</p>
@@ -9,7 +9,7 @@ export default options => `
             <div class="grid vertical-align">
               <div class="column">
                 <textarea class="is-hidden js-source-template">
-abstract class Animal {
+export abstract class Animal {
   abstract makeSound(): void;
   constructor(protected age: number){}
   public move(x = 0, y = 0): [number, number] {
@@ -19,7 +19,7 @@ abstract class Animal {
     return 'Animals are multicellular, eukaryotic organisms'; 
   }
 }
-class Dog extends Animal {
+export class Dog extends Animal {
   makeSound(): void {
     console.log(this.sound);
   }
@@ -32,6 +32,8 @@ class Dog extends Animal {
 }
 
 console.log(Animal.info());
+let dog = new Dog();
+export default dog; 
                 </textarea>
                 <div class="wt-code-source js-source"></div>
               </div>
@@ -41,8 +43,23 @@ console.log(Animal.info());
             </div>
 
             <div class="wt-code-example">
-                <div class="rectangle"></div>
+                <div class='bubble'></div> 
+                <div class='dog'>
+                  <div class='head'>
+                    <div class='nose'></div>
+                    <div class='ear'></div>
+                  </div>
+                  <div class='body'>
+                    <div class='paw'></div>
+                    <div class='tail'></div>
+                  </div>
+                  <div class='bone' data-text=''>
+                    <div class='left'></div>
+                    <div class='right'></div>
+                  </div>
+                </div>
             </div>
+        </div>
         </div>
     </section>
 `;

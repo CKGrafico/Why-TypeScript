@@ -23,6 +23,15 @@ class List<T> {
 let list = new List<string>();
 list.add('Quique');
 console.log(list.length);
+
+/*
+BaseService for different Typed Services
+public getAll<T>(): Promise<Array<T>> {
+    return this.fromMemory(this.key)
+        .catch(() => this.fromStorage(this.key)
+            .catch(() => this.fromServer(this.key)));
+}
+*/
                 </textarea>
                 <div class="wt-code-source js-source"></div>
               </div>
