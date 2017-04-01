@@ -57,17 +57,24 @@ class CompilerService {
     }
 
     private addMethods(code) {
+        // Yes could be better =)
         let methods = `
             var promise = {
                 then: function() {},
-                ccatch: function() {}
+                catch: function() {}
             }
             var lib = {
                 create: function() {},
                 ajax: function() { return promise},
                 move: function() {},
+                show: function() {},
+                sound: function() {this.isSound = true},
+                isSound: false,
                 setName: function() {}
             };
+
+            exports.promise = promise;
+            exports.lib = lib;
         `;
         let splitted = code.split(this.precode);
         return splitted[0] + methods + splitted[1].replace(this.removers, '');

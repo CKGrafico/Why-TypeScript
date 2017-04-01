@@ -3,16 +3,20 @@ import * as CodeMirror from 'codemirror';
 require('codemirror/mode/javascript/javascript');
 import {Slide} from '../slide';
 
+let times = 0;
+
 let selectors = {
     source: '.js-source',
     sourceTemplate: '.js-source-template',
-    result: '.js-result'
+    result: '.js-result',
 };
 
 export class CodeSlide extends Slide {
     public $slide;
     public source;
     public result;
+    private $sourceParent;
+    private $resultParent;
 
     constructor(public context, private slideSelector?) {
         super();
@@ -20,17 +24,22 @@ export class CodeSlide extends Slide {
 
     public onCreate(): void {
         this.$slide = $(this.slideSelector);
-        this.source = CodeMirror(this.$slide.find(selectors.source)[0], {
+        let $source = this.$slide.find(selectors.source);
+        let $result = this.$slide.find(selectors.result);
+        this.$sourceParent = $source.parent();
+        this.$resultParent = $result.parent();
+
+        this.source = CodeMirror($source[0], {
             lineNumbers: true,
             mode:  'text/typescript',
             theme: 'neo',
             value: this.$slide.find(selectors.sourceTemplate).val()
         });
-        this.result = CodeMirror(this.$slide.find(selectors.result)[0], {
+        this.result = CodeMirror($result[0], {
             lineNumbers: true,
             mode:  'javascript',
             theme: 'neo',
-            value: ''
+            value: 'Loading...'
         });
         this.bindEvents();
     }
@@ -50,6 +59,7 @@ export class CodeSlide extends Slide {
         }
     }
 
+
     private compileSource(): void {
         let val = this.source.getDoc().getValue();
         $.ajax({
@@ -61,9 +71,19 @@ export class CodeSlide extends Slide {
         });
     }
 
+    private toggleResult(): void {
+        this.$resultParent.toggle();
+    }
+
+    private toggleSource(): void {
+        this.$sourceParent.toggle();
+    }
+
     private bindEvents(): void {
         this.source.on('blur', () => this.compileSource());
-        this.compileSource();
+        this.source.on('dblclick', () => this.toggleResult());
+        this.result.on('dblclick', () => this.toggleSource());
+        this.$slide.on('mouseenter', () => this.compileSource());
     }
 
     protected addRule(selector, styles) {

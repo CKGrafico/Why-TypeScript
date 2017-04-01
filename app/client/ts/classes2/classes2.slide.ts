@@ -45,7 +45,13 @@ export class Classes2Slide extends CodeSlide {
         }
 
         if (dog.makeSound && dog.sound) {
-            $container.find('.bubble').show().text(dog.sound)
+            // Yes could be better xD
+            dog.makeSound();
+            if (context.lib.isSound) {
+                $container.find('.bubble').show().text(dog.sound)
+            } else {
+                $container.find('.bubble').hide();
+            }
         } else {
             $container.find('.bubble').hide();
         }

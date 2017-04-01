@@ -8,7 +8,7 @@ export default options => `
 
             <div class="grid vertical-align">
               <div class="column">
-                <textarea class="is-hidden js-source-template">
+                <textarea class="is-hidden js-source-template">import {lib} from 'lib';
 export abstract class Animal {
   abstract makeSound(): void;
   constructor(protected age: number){}
@@ -21,7 +21,7 @@ export abstract class Animal {
 }
 export class Dog extends Animal {
   makeSound(): void {
-    console.log(this.sound);
+    lib.sound(this.sound);
   }
   constructor(public tag = 'Snoopy', 
               public readonly color = '#000000', 

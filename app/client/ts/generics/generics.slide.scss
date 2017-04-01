@@ -1,0 +1,54 @@
+@import '../../scss/base/variables';
+
+.wt-generics {
+    //by https://codepen.io/HugoGiraudel/pen/layxv
+    .board{
+        background: linear-gradient(#616161, #474747);
+        border: 1px solid #9f7037;
+        border-radius: 3px;
+        bottom: -6rem;
+        box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.3), inset 0 30px 30px rgba(255, 255, 255, 0.1);
+        color: white;
+        font-family: 'Monospace';
+        font-size: $font-size-m;
+        font-weight: bold;
+        height: 150px;
+        letter-spacing: 3px;
+        line-height: $font-size-m * 1.2;
+        margin: 40px auto;
+        padding-top: 1rem;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+        width: 200px;
+
+        &:before {
+            background: #e8cca0;
+            border: #9b6b2f solid 1px;
+            border-radius: 0.3em;
+            bottom: -10px;
+            box-shadow: 0 4px 2px 2px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.4), inset 0 0 2px black;
+            content: "";
+            left: -10px;
+            position: absolute;
+            right: -10px;
+            top: -10px;
+            z-index: -1;
+        }
+
+        &:after {
+            background: #f1f1f1;
+            border-radius: 0.1em 0.1em 0 0.1em;
+            bottom: -1px;
+            box-shadow: inset 0 -4px 1px rgba(0, 0, 0, 0.3), -1px -1px 1px rgba(0, 0, 0, 0.2), 0 2px 0 rgba(0, 0, 0, 0.3);
+            content: "";
+            display: block;
+            height: 8px;
+            position: absolute;
+            right: 15px;
+            width: 50px;
+        }
+    }
+
+}
