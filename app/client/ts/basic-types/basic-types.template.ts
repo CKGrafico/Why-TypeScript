@@ -3,7 +3,7 @@ export default options => `
         <div class="wrap fadeInUp">
             <div class="content-center">
               <h2 class="text-landing"><strong>Basic types</strong></h2>
-              <p>Some types that you can find are: <span class="u-underline">boolean</span>, <span class="u-underline">number</span>, <span class="u-underline">string</span>, <span class="u-underline">Array</span>, <span class="u-underline">ReadonlyArray</span>, <span class="u-underline">Tuple</span>, <span class="u-underline">void</span>, <span class="u-underline">never</span>, and also we have type <span class="u-underline">inference</span>. </p>
+              <p>Working with: <span class="u-underline">boolean</span>, <span class="u-underline">number</span>, <span class="u-underline">string</span>, <span class="u-underline">Array</span>, <span class="u-underline">ReadonlyArray</span>, <span class="u-underline">Tuple</span>, <span class="u-underline">void</span>, <span class="u-underline">never</span>, and also we have type <span class="u-underline">inference</span>. </p>
             </div>
 
             <div class="grid vertical-align">

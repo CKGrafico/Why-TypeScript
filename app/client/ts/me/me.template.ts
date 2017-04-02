@@ -21,16 +21,16 @@ export default options => `
                 </p>
                 <div class="wt-me-row">
                     <ul class="wt-me-col description">
-                        <li><strong class="text-label">Languages</strong></li>
-                        <li>Spanish</li>
-                        <li>Catalan</li>
-                        <li>English</li>
-                    </ul>
-                    <ul class="wt-me-col description">
                         <li><strong class="text-label">$Languages</strong></li>
                         <li>JavaScript, TypeScript</li>
                         <li>SCSS, CSS, HTML...</li>
                         <li>C#</li>
+                    </ul>
+                    <ul class="wt-me-col description">
+                        <li><strong class="text-label">Languages</strong></li>
+                        <li>Spanish</li>
+                        <li>Catalan</li>
+                        <li>English</li>
                     </ul>
                 </div>
               </div>
