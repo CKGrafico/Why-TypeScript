@@ -1,4 +1,5 @@
 var fs = require('fs');
+var source = require('vinyl-source-stream');
 var browserify = require('browserify');
 var tsify = require('tsify');
 
@@ -15,5 +16,6 @@ module.exports = (gulp, paths, $, _) => {
     })
     .bundle()
     .on('error', error => console.error(error.toString()))
-    .pipe(fs.createWriteStream(_.folder(paths.dist.client.js) + '/app.js'));
+    .pipe(source('app.js'))
+    .pipe(gulp.dest(_.folder(paths.dist.client.js)));
 };
