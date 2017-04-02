@@ -11,4 +11,8 @@
             opacity: .5;
         }
     }
+
+    &-invisible {
+        visibility: hidden;
+    }
 }

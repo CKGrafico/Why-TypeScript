@@ -1,7 +1,5 @@
 export default options => `
     <section class="wt-typings aligncenter">
-        <div class="wrap fadeInUp">
-            <h3>Typings</h3>
-        </div>
+        <span class="background dark" style="background-image:url('/assets/images/bg_types.gif')"></span>
     </section>
 `;

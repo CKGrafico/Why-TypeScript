@@ -1,5 +1,24 @@
 @import '../../scss/base/variables';
 
 .wt-flow {
+    .bg_0 {
+        animation: hide-flow 1s 2s forwards;
+    }
 
+    @keyframes hide-flow {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    &-troll {
+        bottom: 1rem;
+        position: absolute;
+        right: 1rem;
+        width: 300px;
+    }
 }

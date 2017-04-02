@@ -8,4 +8,12 @@
     &-underline {
         text-decoration: underline;
     }
+
+    &-upper {
+        text-transform: uppercase;
+    }
+
+    &-big {
+        font-size: $font-size-xl;
+    }
 }
