@@ -1,5 +1,7 @@
 @import '../../scss/base/variables';
 
 .wt-introduction {
-
+    .flexblock.blink li {
+        background: rgba($color-background-brighter, .1);
+    }
 }
