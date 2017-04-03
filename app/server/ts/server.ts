@@ -5,7 +5,7 @@ import {json} from 'body-parser';
 import {Express, Request, Response} from 'express';
 import {CompilerController} from './compiler';
 
-const PORT = 8080;
+const PORT = process.env.port || 8080;
 
 export class Server {
     private app: Express;
