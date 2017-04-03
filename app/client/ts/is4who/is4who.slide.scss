@@ -1,5 +1,29 @@
 @import '../../scss/base/variables';
 
-.wt-is4who {
-   
+.wt-is4who, 
+.wt-is4what {
+   // assets from http://freepsdfiles.net/vector-characters/free-vector-geek-characters-collection-vol-1
+    // assets http://freepsdfiles.net/vector-characters/robot-vector-character-set-1
+    // assets http://freepsdfiles.net/vector-characters/vector-cavemen-set
+
+   .column--image {
+        animation: is4who-show $animation-speed-slow .5s forwards;
+        filter: brightness(0);
+        max-height: 70vh;
+        overflow: visible;
+   }
+
+   @keyframes is4who-show {
+       0% {
+            filter: brightness(0);
+       }
+
+       50% {
+           filter: brightness(50%) blur(2rem);
+       }
+
+       100% {
+            filter: brightness(100%) blur(0);
+       }
+   }
 }

@@ -1,14 +1,20 @@
 export default options => `
-    <section class="wt-is4who aligncenter">
-        <div class="wrap fadeInUp">
-            <h3><strong class="u-upper u-big u-underline">Doesn't have to be for everyone</strong></h3>
+    <section class="wt-is4who fullscreen">
+      <div class="card-50">
+        <figure>
+          <img src="/assets/images/bg_4who.jpg">
+        </figure>
+        <div class="flex-content">
+          <h1><strong>Teams</strong></h1>
+          <h2>Doesn't have to be for everyone.</h2>
         </div>
+      </div>
     </section>
 
-    <section>
+    <section class="wt-is4who">
         <div class="wrap">
             <div class="grid vertical-align">
-              <div class="column">
+              <div class="column column--image">
                 <figure><img class="aligncenter" src="/assets/images/4who_back.png"></figure>
               </div>
               <div class="column">
@@ -21,7 +27,7 @@ export default options => `
           </div>
     </section>
 
-    <section>
+    <section class="wt-is4who">
         <div class="wrap">
             <div class="grid vertical-align">
               <div class="column">
@@ -30,17 +36,17 @@ export default options => `
                 </h1>
                 <p class="text-intro">I consider that I know a lot about frontend and JavaScript I start feelking that I need something more, without stop doing JavaScript.</p>
               </div>
-              <div class="column">
+              <div class="column column--image">
                 <figure><img class="aligncenter" src="/assets/images/4who_adv.png"></figure>
               </div>
             </div>
         </div>
     </section>
 
-     <section>
+     <section class="wt-is4who">
         <div class="wrap">
             <div class="grid vertical-align">
-              <div class="column">
+              <div class="column column--image">
                 <figure><img class="aligncenter" src="/assets/images/4who_beg.png"></figure>
               </div>
               <div class="column">

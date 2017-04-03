@@ -2,7 +2,7 @@
 
 .wt-flow {
     .bg_0 {
-        animation: hide-flow 1s 2s forwards;
+        animation: hide-flow $animation-speed-slow 1s forwards;
     }
 
     @keyframes hide-flow {
