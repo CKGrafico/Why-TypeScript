@@ -38,4 +38,12 @@ export default options => `
             </div>
         </div>
     </section>
+
+    <section class="wt-me">
+        <span class="background" style="background-image:url('/assets/images/bg_plain.jpg')"></span>
+    </section>
+
+    <section class="wt-me">
+        <span class="background" style="background-image:url('/assets/images/bg_help.jpg')"></span>
+    </section>
 `;
