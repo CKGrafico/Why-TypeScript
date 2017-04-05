@@ -20,6 +20,7 @@ export class CodeSlide extends Slide {
     private $sourceParent;
     private $resultParent;
     private isAlt = false;
+    private compiled = false;
     protected retrieved: string;
 
     constructor(public context, private slideSelector?) {
@@ -76,6 +77,15 @@ export class CodeSlide extends Slide {
         });
     }
 
+    private compileOnEnter() {
+        if (this.compiled) {
+            return;
+        }
+
+        this.compiled = true;
+        return this.compileSource();
+    }
+
     private toggleResult(): void {
         if (this.isAlt) {
             this.$resultParent.toggle();
@@ -98,7 +108,7 @@ export class CodeSlide extends Slide {
         this.result.on('dblclick', () => this.toggleSource());
         this.source.on('keydown', (i, e) => this.checkAlt(i, e));
         this.result.on('keydown', (i, e) => this.checkAlt(i, e));
-        this.$slide.on('mouseenter', () => this.compileSource());
+        this.$slide.on('mouseenter', () => this.compileOnEnter());
     }
 
     protected addRule(selector, styles) {
