@@ -7,7 +7,7 @@ export default options => `
               <ul class="flexblock reasons">
                 <li>
                   <h2>Importing default</h2>
-                  <code>import Component from './lib';</code>
+                  <code>import SomeDefaultComponent from './lib/component';</code>
                 </li>
                 <li>
                   <h2>Importing features</h2>
