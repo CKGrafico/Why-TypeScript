@@ -26,12 +26,12 @@ export default options => `
                         <li>SCSS, CSS, HTML...</li>
                         <li>C#</li>
                     </ul>
-                    <ul class="wt-me-col description">
+                    <!-- <ul class="wt-me-col description">
                         <li><strong class="text-label">Languages</strong></li>
                         <li>Spanish</li>
                         <li>Catalan</li>
                         <li>English</li>
-                    </ul>
+                    </ul> -->
                 </div>
               </div>
               <!-- end .flex-content-->

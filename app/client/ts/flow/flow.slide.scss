@@ -21,4 +21,23 @@
         right: 1rem;
         width: 300px;
     }
+
+    &-logo {
+        margin: 2rem auto;
+        max-width: 50%;
+    }
+
+    &-card {
+        box-shadow: 0 0 3rem 0 rgba($color-foreground-dark, .1);
+        font-size: 2.2rem;
+        min-height: 70vh;
+    }
+
+    &-item {
+        width: 110%;
+    }
+
+    &-highlight {
+        border-bottom: 1px solid $color-brand;
+    }
 }

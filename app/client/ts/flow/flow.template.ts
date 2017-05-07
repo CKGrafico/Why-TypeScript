@@ -12,14 +12,27 @@ export default options => `
     </section>
 
     <section>
-        <div class="wrap size-60">
-            <h4>Initial commit of both end 2014</h4>
-            <span>Today TS >v2 & >2K issues - Flow >v0.4 & >1K issues <strong>(but remember you choose)</strong></span>
-            <h4 class="is-invisible">_</h4>
-            <div class="embed">
-                <iframe width="800" height="450" src="https://www.youtube.com/embed/JfhV_ezOxgA?start=19"></iframe>
+        <div class="wrap fadeInUp size-60">
+            <div class="wt-flow-card card-50 bg-white">
+                <div class="grid vertical-align">
+                <div class="column">
+                    <img class="wt-flow-logo" src="/assets/images/flow-logo.png" alt="Flow logo">
+                    <ul>
+                        <li class="wt-flow-item">- <strong>Doesn't need</strong> a new language</li>
+                        <li class="wt-flow-item">- <strong>ES*</strong> features</li>
+                        <li class="wt-flow-item">- Type checking in <strong>JavaScript</strong></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <img class="wt-flow-logo" src="/assets/images/ts-logo.png" alt="TS logo">
+                    <ul>
+                        <li class="wt-flow-item">- JavaScript <strong>superset</strong> with types</li>
+                        <li class="wt-flow-item">- <strong>ES*</strong> features</li>
+                        <li class="wt-flow-item"> <span>- Type checking in <strong>JavaScript</strong> <small class="wt-flow-highlight">Since <a href="https://blogs.msdn.microsoft.com/typescript/2017/04/27/announcing-typescript-2-3/" title="TS 2.3">2.3.0</a></small></span></li>
+                    </ul>
+                </div>
+                </div>
             </div>
-            
         </div>
     </section>
 `;
