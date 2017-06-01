@@ -16,7 +16,7 @@ let unionExample = (param: string | number): string | number => {
 // let nullable = 'A nullable';
 // nullable = null;
 
-// Type StringType = 'one' | 'two' | 'three';
+// type StringType = 'one' | 'two' | 'three';
 // let a: StringType = 'one';
 // interface createImg {
 // (tagName: 'img'): HTMLImageElement
