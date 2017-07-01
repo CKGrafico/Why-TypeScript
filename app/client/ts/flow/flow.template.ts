@@ -7,7 +7,7 @@ export default options => `
 
         <div class="content-left">
               <h2><strong>TypeScript vs Flow</strong></h2>
-              <h3>Are pretty similar, try both and choose what is better for you, your team and your project.</h3>
+              <h3>Are pretty similar, try both and choose what is better for you, your team and your project. <a href="https://redditblog.com/2017/06/30/why-we-chose-typescript/" target="_blank">Reddit Post</a></h3>
             </div>
     </section>
 
