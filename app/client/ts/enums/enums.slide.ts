@@ -20,7 +20,7 @@ export class EnumsSlide extends CodeSlide {
     public onEval(): void {
         // Are only examples don't use code like that please haha
         let context = window[this.context];
-        let directions = context.Directions;
+        let directions = context.Direction;
         let direction = context.lib.direction;
         let $cat = $('.cat');
 
