@@ -9,14 +9,14 @@ export default options => `
             <div class="grid vertical-align">
               <div class="column">
                 <textarea class="is-hidden js-source-template">import {lib} from 'lib';
-export enum Directions {
+export enum Direction {
     Up = 2,
     Down,
     Left,
     Right
 }
 
-lib.configure(Directions);
+lib.configure(Direction);
 lib.move(null);
                 </textarea>
                 <div class="wt-code-source js-source"></div>
