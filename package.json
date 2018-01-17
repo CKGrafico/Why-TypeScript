@@ -10,7 +10,7 @@
     "jquery": "^3.1.1",
     "normalize-scss": "^6.0.0",
     "typescript": "^2.2.1",
-    "webslides": "^1.2.1"
+    "webslides": "1.2.1"
   },
   "devDependencies": {
     "@types/codemirror": "0.0.38",
@@ -38,7 +38,7 @@
     "require.all": "^2.0.3",
     "tsify": "^3.0.1",
     "tslint": "^4.5.1",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^2.0.0"
   },
   "scripts": {
     "dev": "gulp --env=development",
